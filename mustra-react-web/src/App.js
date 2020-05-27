@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import AcUnitIcon from "@material-ui/icons/AcUnit";
-import ReplyModule from "module/ReplyModule/ReplyModule";
+import PageRouter from "PageRouter";
+
 const App = () => {
     return (
         <div className="App">
-            hello react
-            <ReplyModule />
-            <AcUnitIcon />
+            <PageRouter />
         </div>
     );
 };
