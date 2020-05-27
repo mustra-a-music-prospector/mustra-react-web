@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "page/Home/Home";
+import Feed from "page/Feed/Feed";
 import ScrollToTop from "util/ScrollToTop";
 const PageRouter = (props) => {
     return (
@@ -10,9 +12,8 @@ const PageRouter = (props) => {
                     <div className="Article">
                         <ScrollToTop>
                             <Switch>
-                                {/* <Route exact path="/" component={Home} />
-                                <Route path="/howto" component={HowTo} />
-                                <Route path="/emailCheck/:rand" component={EmailCheck} /> */}
+                                <Route exact path="/" component={Home} />
+                                <Route path="/feed" component={Feed} />
                             </Switch>
                         </ScrollToTop>
                     </div>

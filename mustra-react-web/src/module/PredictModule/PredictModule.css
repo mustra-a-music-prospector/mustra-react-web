@@ -1,0 +1,12 @@
+.PredictModule {
+    margin-top: 50px;
+    height: 60vh;
+    background-color: black;
+    color: white;
+}
+
+.PredictModule .header-row {
+    padding-top: 20px;
+    font-size: 30px;
+    text-align: center;
+}
