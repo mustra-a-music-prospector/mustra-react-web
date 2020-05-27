@@ -4,9 +4,12 @@ import "./PredictModule.css";
 const PredictModule = () => {
     return (
         <div className="PredictModule">
-            <Container>
-                <div className="header-row">This is Header</div>
-            </Container>
+            <div className="black-mask">
+                <Container>
+                    <div className="header-row"></div>
+                    <div className="header-row">This is Header</div>
+                </Container>
+            </div>
         </div>
     );
 };
