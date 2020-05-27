@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./App.css";
 import AcUnitIcon from "@material-ui/icons/AcUnit";
 import ReplyModule from "module/ReplyModule/ReplyModule";
 const App = () => {
