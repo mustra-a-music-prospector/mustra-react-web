@@ -4,15 +4,36 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    margin-top: 50px;
-    height: calc(100vh - 50px);
+    /* margin-top: 50px; */
+    height: calc(100vh);
     background-color: black;
     color: white;
     justify-content: center;
 }
-
+.PredictModule .content-inner {
+    padding-top: 200px;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
 .PredictModule .header-row {
-    padding-top: 20px;
     font-size: 30px;
     text-align: center;
+    margin-bottom: 30px;
+}
+
+.PredictModule #logo {
+    width: 150px;
+}
+
+.PredictModule .item-row {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.PredictModule .input-row {
+    margin-top: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
 }

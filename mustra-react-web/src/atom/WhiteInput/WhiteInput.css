@@ -1,0 +1,42 @@
+.WhiteInput {
+    margin-bottom: 50px;
+}
+
+.WhiteInput .input {
+    font-size: 22px;
+    /* max-width: calc(100vw - 12px); */
+    width: 100%;
+}
+.WhiteInput .input::after {
+    content: "";
+    position: relative;
+    display: block;
+    border-bottom: 3px solid #333333;
+    top: -3px;
+    isolation: isolate;
+}
+
+.WhiteInput .inner {
+    position: relative;
+    display: inline-block;
+    padding: 0.5em 0;
+    border-bottom: 3px solid white;
+    z-index: 1;
+    font-family: Roboto Slab, sans-serif;
+}
+.WhiteInput .inner:focus {
+    border-color: #fbc91b;
+}
+.WhiteInput .inner:empty {
+    border-color: transparent;
+    width: 100%;
+}
+.WhiteInput .inner:empty::before {
+    content: attr(placeholder);
+    cursor: text;
+    color: #757575;
+}
+
+.WhiteInput .inner:focus {
+    outline: 0;
+}
