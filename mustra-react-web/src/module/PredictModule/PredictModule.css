@@ -12,6 +12,8 @@
 }
 .PredictModule .content-inner {
     padding-top: 200px;
+}
+.PredictModule .fade-div {
     animation: fadein 2s;
     -moz-animation: fadein 2s; /* Firefox */
     -webkit-animation: fadein 2s; /* Safari and Chrome */
