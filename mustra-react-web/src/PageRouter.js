@@ -26,22 +26,13 @@ const PageRouter = () => {
     };
     return (
         <div className="PageRouter">
-            <Router>
-                <div id="rt">
-                    <Switch>
-                        <HeaderComponent scrollToFeed={scrollToFeed} />
-                    </Switch>
-                    <div className="Article">
-                        <ScrollToTop>
-                            <Switch>
-                                <Route exact path="/" render={(props) => <Home feed={true} />} />
-                                <Route path="/feed" component={Feed} />
-                            </Switch>
-                        </ScrollToTop>
-                    </div>
-                    {/* <FooterModule /> */}
+            <div id="rt">
+                <HeaderComponent scrollToTop={scrollToTop} scrollToFeed={scrollToFeed} />
+                <div className="Article">
+                    <Home feed={true} />
                 </div>
-            </Router>
+                {/* <FooterModule /> */}
+            </div>
         </div>
     );
 };
