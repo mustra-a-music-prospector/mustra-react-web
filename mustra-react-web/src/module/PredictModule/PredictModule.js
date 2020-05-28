@@ -3,6 +3,9 @@ import { Container, Button } from "reactstrap";
 import "./PredictModule.css";
 import white_single_logo from "img/white-single-logo.png";
 import white_full_logo from "img/white-full-logo.png";
+import { GOOGLE_GET, NAVER_GET } from "rest";
+
+import axios from "axios";
 
 //atoms
 import WhiteInput from "atom/WhiteInput/WhiteInput";
@@ -50,6 +53,20 @@ const Page2 = ({ artist, song, setSong, prevPage, goToResult }) => {
 };
 
 const Page3 = ({ artist, song }) => {
+    // const getByGoogle = async () => {
+    //     const data = await NAVER_GET(artist);
+    //     if (data) {
+    //         console.log(data);
+    //     }
+    // };
+    // const get = () => {
+    //     axios.get("https://www.google.com/search?q=" + artist).then((response) => console.log(response));
+    // };
+    // useEffect(() => {
+    //     console.log("test");
+    //     getByGoogle();
+    //     get();
+    // }, [1]);
     return (
         <div className="fade-div">
             <div className="item-row">
@@ -64,12 +81,30 @@ const Page3 = ({ artist, song }) => {
 };
 
 const ResultPage = () => {
+    const artist = "아이유";
+    const song = "좋은날";
+    const rank = "A";
+
     return (
         <div className="fade-div">
-            <div className="item-row">랭크 : A</div>
-            <div className="item-row">
-                <Loader />
+            <div className="item-row result">
+                <span id="item-label">가수</span>
+                <br />
+                <span id="item-value">{artist}</span>
             </div>
+            <div className="item-row result">
+                <span id="item-label">곡</span>
+                <br />
+                <span id="item-value">{song}</span>
+            </div>
+            <div className="item-row result">
+                <span id="item-label">랭크</span>
+                <br />
+                <span id="rank">{rank}</span>
+                <br />
+                <span id="item-label">해당 랭크는 인공지능 학습의 결과입니다</span>
+            </div>
+            <div className="item-row opinion">의견 작성</div>
         </div>
     );
 };
@@ -90,14 +125,16 @@ class RenderNowPage extends React.Component {
             case 3:
                 return <Page3 artist={artist} song={song} />;
             default:
-                return <Page1 artist={artist} setArtist={setArtist} nextPage={nextPage} />;
+                return <ResultPage />;
+            // default:
+            //     return <Page1 artist={artist} setArtist={setArtist} nextPage={nextPage} />;
         }
     }
 }
 const PredictModule = () => {
     const [artist, setArtist] = useState();
     const [song, setSong] = useState();
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState();
     const nextPage = () => setPage(2);
     const prevPage = () => setPage(1);
     const goToResult = () => setPage(3);
