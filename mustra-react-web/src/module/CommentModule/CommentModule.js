@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Form, FormGroup } from "reactstrap";
+import { Button, Modal, Form, ModalHeader } from "reactstrap";
 import "./CommentModule.css";
 import WhiteInput from "atom/WhiteInput/WhiteInput";
 //icons
 import AudiotrackIcon from "@material-ui/icons/Audiotrack";
 import EmojiEventsIcon from "@material-ui/icons/EmojiEvents";
-import GavelIcon from "@material-ui/icons/Gavel";
 import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice";
 
 const CommentModule = () => {
@@ -23,7 +22,19 @@ const CommentModule = () => {
             </Form>
             <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
                 <div className="comment-modal-wrapper">
-                    <div className="comment-modal-header">결과에 대해 말해주세요</div>
+                    <ModalHeader
+                        toggle={toggle}
+                        // style={{
+                        //     borderBottom: "none",
+                        //     fontFamily: "Noto Sans KR",
+                        //     fontSize: "25px",
+                        //     fontWeight: "bold",
+                        //     textAlign: "center",
+                        // }}
+                        className="comment-modal-header"
+                    >
+                        결과에 대해 말해주세요
+                    </ModalHeader>
                     <div className="comment-modal-body">
                         <div className="singer-result-box">
                             <KeyboardVoiceIcon style={{ fontSize: "28px", color: "lightgray" }} />
