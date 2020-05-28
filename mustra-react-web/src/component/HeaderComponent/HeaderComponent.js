@@ -58,7 +58,7 @@ const HeaderComponent = () => {
                     </div>
                     <div className="collapse-item-wrapper">
                         <a className="collapse-item" href="#search" onClick={() => toggle()}>
-                            Search
+                            Feed
                         </a>
                     </div>
                     <div className="collapse-item-wrapper">
