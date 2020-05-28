@@ -33,7 +33,26 @@
 }
 
 .PredictModule .input-row {
-    margin-top: 50px;
     padding-left: 30px;
     padding-right: 30px;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.PredictModule .item-row .left-col {
+    text-align: left;
+    width: 50%;
+    float: left;
+    cursor: pointer;
+}
+.PredictModule .item-row .right-col {
+    text-align: right;
+    width: 50%;
+    float: right;
+    cursor: pointer;
+}
+
+.PredictModule .item-row #arrow-label {
+    color: gray;
+    font-size: 15px;
 }
