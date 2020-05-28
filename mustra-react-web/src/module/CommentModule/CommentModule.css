@@ -1,37 +1,136 @@
 .comment-modal-wrapper {
-    background-color: black !important;
-    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    /* opacity: 0.9; */
 }
 
-.comment-modal-header.modal-header {
+/* .comment-modal-header.modal-header {
     border-bottom: none;
     padding-right: 20px !important;
     padding-left: 135px !important;
     padding-top: 20px !important;
-}
 
-.comment-modal-header.modal-header .modal-title {
+} */
+
+/* .comment-modal-header.modal-header .modal-title {
     font-family: "Noto Sans KR", sans-serif !important;
     font-size: 25px !important;
     font-weight: bold !important;
     text-align: center !important;
     color: lightgray;
-}
+} */
 
 .comment-modal-body {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    overflow: hidden;
     width: 100%;
     padding-right: 15px !important;
     padding-left: 15px;
-}
 
-.comment-modal-body {
-    padding-top: 40px;
     font-family: "Noto Sans KR", sans-serif;
-    text-align: center;
-    width: 100%;
 }
 
-.rank-result-box {
+.comment-modal-body .stats-row {
+    overflow: hidden;
+    color: white;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(39, 39, 39);
+}
+
+.comment-modal-body .stats-col {
+    float: left;
+}
+.comment-modal-body .rank {
+    width: 15%;
+}
+.comment-modal-body .artist {
+    width: 35%;
+}
+.comment-modal-body .song {
+    width: calc(100% - 50%);
+}
+.comment-modal-body .item-label {
+    color: gray;
+    margin-right: 5px;
+    font-size: 15px;
+}
+.comment-modal-body .item-value {
+    font-size: 20px;
+}
+
+.comment-modal-body .input-row {
+    padding-top: 30px;
+}
+.comment-modal-body .input-row input {
+    background-color: rgb(36, 36, 36);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* height: 150px; */
+}
+
+.comment-modal-body .submit-row {
+    padding-top: 40px;
+}
+
+.comment-modal-body .submit-row #submit {
+    background-color: black;
+    color: rgb(129, 129, 129);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: right;
+}
+.comment-modal-body .submit-row #cancle {
+    background-color: rgb(114, 28, 28);
+    color: rgb(129, 129, 129);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+}
+
+.comment-modal-body #limit {
+    color: white;
+    float: right;
+    overflow: hidden;
+}
+.comment-modal-body .rank-value {
+    height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    width: 50%;
+    text-align: center;
+    line-height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+}
+.comment-modal-body .A {
+    /* background-color: rgb(151, 151, 44); */
+    border: 1px solid rgb(151, 151, 44);
+    color: rgb(229, 255, 0);
+}
+.comment-modal-body .B {
+    border: 1px solid rgb(26, 46, 156);
+    color: rgb(39, 68, 228);
+}
+.comment-modal-body .C {
+}
+.comment-modal-body .D {
+}
+.comment-modal-body .E {
+}
+
+/* .rank-result-box {
     width: 100%;
     text-align: center;
     padding-top: 20px;
@@ -114,4 +213,4 @@
     width: 100%;
     border-radius: 5px;
     text-decoration: none;
-}
+} */

@@ -2,64 +2,52 @@ import React, { useState, useEffect } from "react";
 import { Button, Modal, Form, ModalHeader } from "reactstrap";
 import "./CommentModule.css";
 import WhiteInput from "atom/WhiteInput/WhiteInput";
-//icons
-import AudiotrackIcon from "@material-ui/icons/Audiotrack";
-import EmojiEventsIcon from "@material-ui/icons/EmojiEvents";
-import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice";
 
-const CommentModule = () => {
-    const [modal, setModal] = useState(false);
+const CommentModule = ({ handleCreateFeed, modal, toggle, artist, song }) => {
     const backdrop = "static";
-    const toggle = () => setModal(!modal);
-    const [comment, setComment] = useState("");
-
+    const [comment, setComment] = useState();
+    const rank = "B";
     return (
-        <React.Fragment>
-            <Form>
-                <Button color="secondary" onClick={toggle}>
-                    Comment
-                </Button>
-            </Form>
-            <Modal isOpen={modal} toggle={toggle} backdrop={backdrop}>
-                <div className="comment-modal-wrapper">
-                    <ModalHeader
-                        toggle={toggle}
-                        // style={{
-                        //     borderBottom: "none",
-                        //     fontFamily: "Noto Sans KR",
-                        //     fontSize: "25px",
-                        //     fontWeight: "bold",
-                        //     textAlign: "center",
-                        // }}
-                        className="comment-modal-header"
-                    >
-                        결과에 대해 말해주세요
-                    </ModalHeader>
-                    <div className="comment-modal-body">
-                        <div className="singer-result-box">
-                            <KeyboardVoiceIcon style={{ fontSize: "28px", color: "lightgray" }} />
-                            <sapn className="result-name">가수</sapn>
-                            <span className="singer-result">아이유</span>
+        <Modal className="CommentModule" isOpen={modal} toggle={toggle} backdrop={backdrop} size="lg">
+            <div className="comment-modal-wrapper">
+                <div className="comment-modal-body">
+                    <div className="stats-row">
+                        <div className={"stats-col rank "}>
+                            <div className={"rank-value " + rank}>{"B"}</div>
                         </div>
-
-                        <div className="song-result-box">
-                            <AudiotrackIcon style={{ fontSize: "28px", color: "lightgray" }} />
-                            <sapn className="result-name">노래 제목</sapn>
-                            <span className="song-result">너의 의미</span>
+                        <div className="stats-col artist">
+                            <span className="item-label ">가수</span>
+                            <br />
+                            <span className="item-value ">{"아이유"}</span>
                         </div>
-                        <div className="rank-result-box">
-                            <EmojiEventsIcon style={{ fontSize: "35px", color: "yellow" }} />
-                            <sapn className="result-name">랭크</sapn>
-                            <span className="rank-result">A</span>
+                        <div className="stats-col song">
+                            <span className="item-label ">곡</span> <br />
+                            <span className="item-value ">{"너의의미"}</span>
                         </div>
-                        <WhiteInput value={comment} setValue={setComment}></WhiteInput>
                     </div>
-                    <div className="comment-modal-footer">
-                        <button onClick={toggle}>Submit</button>
+                    <div className="input-row">
+                        <input
+                            placeholder="당신의 의견"
+                            value={comment}
+                            onChange={({ target: { value } }) => setComment(value)}
+                            type="text"
+                            maxLength="50"
+                        ></input>
+                        <div style={{ overflow: "hidden" }}>
+                            <span id="limit"> [ {comment?.length} / 50 ]</span>
+                        </div>
+                    </div>
+                    <div className="submit-row">
+                        <button id="cancle" onClick={() => toggle()}>
+                            취소하기
+                        </button>
+                        <button id="submit" onClick={() => handleCreateFeed()}>
+                            작성하기
+                        </button>
                     </div>
                 </div>
-            </Modal>
-        </React.Fragment>
+            </div>
+        </Modal>
     );
 };
 

@@ -3,11 +3,15 @@ import { Container, Button } from "reactstrap";
 import "./PredictModule.css";
 import white_single_logo from "img/white-single-logo.png";
 import white_full_logo from "img/white-full-logo.png";
-import { GOOGLE_GET, NAVER_GET } from "rest";
+import { POST, CREATE_FEED } from "rest";
 import axios from "axios";
+
 //atoms
 import WhiteInput from "atom/WhiteInput/WhiteInput";
 import Loader from "atom/Loader/Loader";
+
+//modules
+import CommentModule from "module/CommentModule/CommentModule";
 
 //icons
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
@@ -154,7 +158,7 @@ const Loading = ({ artist, song }) => {
     );
 };
 
-const ResultPage = ({ artist, song, fan, movie }) => {
+const ResultPage = ({ artist, song, fan, movie, toggle }) => {
     const rank = "A";
     if (!rank) {
         return <Loading />;
@@ -178,7 +182,9 @@ const ResultPage = ({ artist, song, fan, movie }) => {
                 <br />
                 <span id="item-label">해당 랭크는 인공지능 학습의 결과입니다</span>
             </div>
-            <div className="item-row opinion">의견 작성</div>
+            <div className="item-row opinion" onClick={() => toggle()}>
+                의견 작성
+            </div>
         </div>
     );
 };
@@ -201,6 +207,7 @@ class RenderNowPage extends React.Component {
             nextPage,
             prevPage,
             goToResult,
+            toggle,
         } = this.props;
         switch (page) {
             case 1:
@@ -227,14 +234,39 @@ const PredictModule = () => {
     const [song, setSong] = useState();
     const [fan, setFan] = useState();
     const [movie, setMovie] = useState();
+    const [rank, setRank] = useState("A");
     const [page, setPage] = useState(1);
+
+    const [modal, setModal] = useState(true);
+    const toggle = () => setModal(!modal);
+
     const nextPage = () => setPage(page + 1);
     const prevPage = () => setPage(1);
     const goToResult = () => setPage(3);
 
+    const handleCreateFeed = async (comment) => {
+        const data = await POST(CREATE_FEED, {
+            rank: rank,
+            artistName: artist,
+            songName: song,
+            comment: comment,
+        });
+        if (data) {
+            console.log(data);
+        }
+    };
+
     return (
         <div className="PredictModule">
             <div className="black-mask">
+                <CommentModule
+                    handleCreateFeed={handleCreateFeed}
+                    modal={modal}
+                    toggle={toggle}
+                    artist={artist}
+                    song={song}
+                    rank={rank}
+                />
                 <Container className="content-inner">
                     <div className="header-row">
                         <img id="logo" src={white_full_logo}></img>
@@ -256,6 +288,7 @@ const PredictModule = () => {
                         nextPage={nextPage}
                         prevPage={prevPage}
                         goToResult={goToResult}
+                        toggle={toggle}
                     />
                 </Container>
             </div>
