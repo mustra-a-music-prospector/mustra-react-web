@@ -3,7 +3,7 @@ import { Container, Button } from "reactstrap";
 import "./PredictModule.css";
 import white_single_logo from "img/white-single-logo.png";
 import white_full_logo from "img/white-full-logo.png";
-import { POST, CREATE_FEED } from "rest";
+import { POST, FIND_RANK, CREATE_FEED } from "rest";
 import axios from "axios";
 
 //atoms
@@ -124,7 +124,7 @@ const Page4 = ({ song, setMovie, nextPage }) => {
                 <div
                     className="item-col"
                     onClick={() => {
-                        setMovie("y");
+                        setMovie("yes");
                         nextPage();
                     }}
                 >
@@ -133,7 +133,7 @@ const Page4 = ({ song, setMovie, nextPage }) => {
                 <div
                     className="item-col"
                     onClick={() => {
-                        setMovie("n");
+                        setMovie("No");
                         nextPage();
                     }}
                 >
@@ -159,26 +159,40 @@ const Loading = ({ artist, song }) => {
 };
 
 const ResultPage = ({ artist, song, fan, movie, toggle }) => {
-    const rank = "A";
-    if (!rank) {
-        return <Loading />;
+    const [result, setResult] = useState();
+    const getReuslt = async () => {
+        const data = await POST(FIND_RANK, {
+            artistName: artist,
+            songName: song,
+            fanNum: fan,
+            video: movie,
+        });
+        if (data) {
+            setResult(data);
+        }
+    };
+    useEffect(() => {
+        getReuslt();
+    }, [1]);
+    if (!result) {
+        return <Loading artist={artist} song={song} />;
     }
     return (
         <div className="fade-div">
             <div className="item-row result">
                 <span id="item-label">가수</span>
                 <br />
-                <span id="item-value">{artist}</span>
+                <span id="item-value">{result.artist}</span>
             </div>
             <div className="item-row result">
                 <span id="item-label">곡</span>
                 <br />
-                <span id="item-value">{song}</span>
+                <span id="item-value">{result.song}</span>
             </div>
             <div className="item-row result">
                 <span id="item-label">랭크</span>
                 <br />
-                <span id="rank">{rank}</span>
+                <span id="rank">{result.rank}</span>
                 <br />
                 <span id="item-label">해당 랭크는 인공지능 학습의 결과입니다</span>
             </div>
@@ -234,7 +248,7 @@ const PredictModule = ({ scrollToFeed }) => {
     const [song, setSong] = useState();
     const [fan, setFan] = useState();
     const [movie, setMovie] = useState();
-    const [rank, setRank] = useState("A");
+    const [rank, setRank] = useState();
     const [page, setPage] = useState(1);
 
     const [modal, setModal] = useState(false);
