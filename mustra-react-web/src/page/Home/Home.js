@@ -11,9 +11,6 @@ const Home = ({ feed }) => {
         <div className="Home">
             <div className="black-mask">
                 <PredictModule />
-                <PredictModule />
-
-                <PredictModule />
             </div>
         </div>
     );
