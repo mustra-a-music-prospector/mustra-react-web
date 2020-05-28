@@ -14,11 +14,7 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 const Page1 = ({ artist, setArtist, nextPage }) => {
     return (
-        <Container className="content-inner">
-            <div className="header-row">
-                <img id="logo" src={white_full_logo}></img>
-                <br />
-            </div>
+        <div className="fade-div">
             <div className="item-row">당신이 궁금한 가수는?</div>
 
             <div className="item-row input-row">
@@ -29,16 +25,12 @@ const Page1 = ({ artist, setArtist, nextPage }) => {
                     </div>
                 </div>
             </div>
-        </Container>
+        </div>
     );
 };
 const Page2 = ({ artist, song, setSong, prevPage, goToResult }) => {
     return (
-        <Container className="content-inner">
-            <div className="header-row">
-                <img id="logo" src={white_full_logo}></img>
-                <br />
-            </div>
+        <div className="fade-div">
             <div className="item-row">{artist}의 궁금한 곡은?</div>
 
             <div className="item-row input-row">
@@ -53,23 +45,32 @@ const Page2 = ({ artist, song, setSong, prevPage, goToResult }) => {
                     </div>
                 </div>
             </div>
-        </Container>
+        </div>
     );
 };
 
 const Page3 = ({ artist, song }) => {
     return (
-        <Container className="content-inner">
-            <div className="header-row">
-                <img id="logo" src={white_full_logo}></img>
-                <br />
-                {artist}
-                {song}
+        <div className="fade-div">
+            <div className="item-row">
+                가수 이름 : {artist}
+                <br />곡 이름 : {song}
             </div>
             <div className="item-row">
                 <Loader />
             </div>
-        </Container>
+        </div>
+    );
+};
+
+const ResultPage = () => {
+    return (
+        <div className="fade-div">
+            <div className="item-row">랭크 : A</div>
+            <div className="item-row">
+                <Loader />
+            </div>
+        </div>
     );
 };
 
@@ -104,16 +105,22 @@ const PredictModule = () => {
     return (
         <div className="PredictModule">
             <div className="black-mask">
-                <RenderNowPage
-                    artist={artist}
-                    setArtist={setArtist}
-                    song={song}
-                    setSong={setSong}
-                    page={page}
-                    nextPage={nextPage}
-                    prevPage={prevPage}
-                    goToResult={goToResult}
-                />
+                <Container className="content-inner">
+                    <div className="header-row">
+                        <img id="logo" src={white_full_logo}></img>
+                        <br />
+                    </div>
+                    <RenderNowPage
+                        artist={artist}
+                        setArtist={setArtist}
+                        song={song}
+                        setSong={setSong}
+                        page={page}
+                        nextPage={nextPage}
+                        prevPage={prevPage}
+                        goToResult={goToResult}
+                    />
+                </Container>
             </div>
         </div>
     );
