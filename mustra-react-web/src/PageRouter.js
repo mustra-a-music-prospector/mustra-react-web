@@ -3,12 +3,16 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "page/Home/Home";
 import Feed from "page/Feed/Feed";
 import ScrollToTop from "util/ScrollToTop";
+import HeaderComponent from "component/HeaderComponent/HeaderComponent";
+
 const PageRouter = (props) => {
     return (
         <div className="PageRouter">
             <Router>
                 <div id="rt">
-                    <Switch>{/* <NewHeaderComponent nickname={nickname} /> */}</Switch>
+                    <Switch>
+                        <HeaderComponent />
+                    </Switch>
                     <div className="Article">
                         <ScrollToTop>
                             <Switch>
