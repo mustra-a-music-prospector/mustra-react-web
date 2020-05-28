@@ -116,3 +116,22 @@
 .collapse-wrapper .collapse-item-wrapper a:hover {
     font-weight: bolder;
 }
+
+#exampleEmail.form-control {
+    margin-top: 5px;
+    margin-bottom: 5px !important;
+}
+
+#exampleText.form-control {
+    margin-top: 5px;
+    margin-bottom: 5px !important;
+}
+
+.modal-body-text {
+    text-align: center !important;
+    margin-bottom: 10px;
+}
+
+.modal-body-email {
+    width: 100%;
+}
