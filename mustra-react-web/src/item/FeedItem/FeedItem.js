@@ -1,25 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./FeedItem.css";
 import axios from "axios";
-import jQuery from "jquery";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+import ChatIcon from "@material-ui/icons/Chat";
 const FeedItem = () => {
-    window.$ = window.jQuery = jQuery;
-    const getData = () => {
-        window.$.ajax({
-            url:
-                "https://www.google.com/search?q=%EA%B5%AC%EA%B8%80&oq=%EA%B5%AC%EA%B8%80&aqs=chrome..69i57j69i59j0l2j69i61l3j69i65.1466j0j7&sourceid=chrome&ie=UTF-8",
-            dataType: "jsonp",
-            jsonpCallback: "myCallback",
-            success: function (data) {
-                console.log("성공 - ", data);
-            },
-            error: function (xhr) {
-                console.log("실패 - ", xhr);
-            },
-        });
-    };
+    const getData = () => {};
 
     getData();
     return (
@@ -34,7 +20,28 @@ const FeedItem = () => {
                         <KeyboardArrowDownIcon />
                     </div>
                 </div>
-                <div className="main-col"></div>
+                <div className="main-col">
+                    <div className="data-col">
+                        <div className="rank-row">
+                            <div id="item-name">랭크</div>
+                            <div id="item-value">A</div>
+                        </div>
+                        <div className="singer-row">
+                            <span id="item-name">가수</span>
+                            <div id="item-value">아이유</div>
+                        </div>
+                        <div className="song-row">
+                            <span id="item-name">곡</span>
+                            <div id="item-value">너의 의미</div>
+                        </div>
+                    </div>
+                    <div className="comment-col">
+                        <span id="item-name">
+                            <ChatIcon />
+                        </span>
+                        <span id="item-value">"A 받을만한 노래 같아요."</span>
+                    </div>
+                </div>
             </div>
         </div>
     );
