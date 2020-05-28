@@ -17,9 +17,13 @@ const HeaderComponent = ({ scrollToFeed, scrollToTop }) => {
     const contactToggle = () => setContactOpen(!contactOpen);
     const [userEmail, setUserEmail] = useState("");
 
-    const btnClick = () => {
-        contactToggle();
-        window.open("mailto:king199777@gmail.com");
+    const btnClick = ({ userEmail }) => {
+        if (userEmail === "") {
+            alert("이메일을 입력해주세요.");
+        } else {
+            contactToggle();
+            window.open("mailto:king199777@gmail.com");
+        }
     };
     // useEffect(() => {
     //     setClicked(location.pathname.split("/")[1]);
@@ -78,7 +82,7 @@ const HeaderComponent = ({ scrollToFeed, scrollToTop }) => {
                 <ModalFooter style={{ borderTop: "none" }}>
                     <Button
                         color="secondary"
-                        onClick={btnClick}
+                        onClick={() => btnClick({ userEmail })}
                         style={{ fontSize: "15px", borderTop: "none", marginTop: "5px" }}
                     >
                         Send
