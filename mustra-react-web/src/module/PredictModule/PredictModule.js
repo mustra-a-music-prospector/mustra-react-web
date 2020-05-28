@@ -16,36 +16,55 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 
 const Page1 = ({ artist, setArtist, nextPage }) => {
+    const [nextAble, setNextAble] = useState(false);
     return (
         <div className="fade-div">
             <div className="item-row">당신이 궁금한 가수는?</div>
 
             <div className="item-row input-row">
-                <WhiteInput hint={"가수이름"} value={artist} setValue={setArtist} onEnter={nextPage} />
+                <WhiteInput
+                    hint={"가수이름"}
+                    value={artist}
+                    setValue={setArtist}
+                    onEnter={nextPage}
+                    setNextAble={setNextAble}
+                />
                 <div className="item-row">
-                    <div className="right-col">
-                        <span id="arrow-label">다음 : 곡이름 입력 </span> <ArrowForwardIosIcon />
-                    </div>
+                    {nextAble ? (
+                        <div className="right-col" onClick={() => nextPage()}>
+                            <span id="arrow-label">다음 : 곡이름 입력 </span> <ArrowForwardIosIcon />{" "}
+                        </div>
+                    ) : (
+                        <span id="arrow-label"> 두글자 이상 입력하세요</span>
+                    )}
                 </div>
             </div>
         </div>
     );
 };
 const Page2 = ({ artist, song, setSong, prevPage, goToResult }) => {
+    const [nextAble, setNextAble] = useState(false);
+
     return (
         <div className="fade-div">
             <div className="item-row">{artist}의 궁금한 곡은?</div>
 
             <div className="item-row input-row">
-                <WhiteInput hint={"곡명"} value={song} setValue={setSong} onEnter={goToResult} />
+                <WhiteInput
+                    hint={"곡명"}
+                    value={song}
+                    setValue={setSong}
+                    onEnter={goToResult}
+                    setNextAble={setNextAble}
+                />
                 <div className="item-row">
-                    <div className="left-col">
-                        <ArrowBackIosIcon />
-                        <span id="arrow-label"> 이전 : 가수 이름 입력</span>
-                    </div>
-                    <div className="right-col">
-                        <span id="arrow-label">다음 : 곡이름 입력 </span> <ArrowForwardIosIcon />
-                    </div>
+                    {nextAble ? (
+                        <div className="right-col" onClick={() => goToResult()}>
+                            <span id="arrow-label">다음 : 예측하기 </span> <ArrowForwardIosIcon />{" "}
+                        </div>
+                    ) : (
+                        <span id="arrow-label"> 두글자 이상 입력하세요</span>
+                    )}
                 </div>
             </div>
         </div>
@@ -134,7 +153,7 @@ class RenderNowPage extends React.Component {
 const PredictModule = () => {
     const [artist, setArtist] = useState();
     const [song, setSong] = useState();
-    const [page, setPage] = useState();
+    const [page, setPage] = useState(1);
     const nextPage = () => setPage(2);
     const prevPage = () => setPage(1);
     const goToResult = () => setPage(3);
