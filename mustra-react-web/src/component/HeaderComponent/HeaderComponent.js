@@ -1,45 +1,42 @@
 import React, { useState, useEffect } from "react";
 import { Container, Collapse } from "reactstrap";
 import mustra_logo_white from "img/mustraLogo/mustra_logo_white.png";
-import { Link } from "react-router-dom";
 import "./HeaderComponent.css";
 
 // icon
 import MenuIcon from "@material-ui/icons/Menu";
 
-const HeaderComponent = ({ location }) => {
+const HeaderComponent = ({ scrollToFeed, scrollToTop }) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const [clicked, setClicked] = useState("");
 
-    useEffect(() => {
-        setClicked(location.pathname.split("/")[1]);
-    }, [location.pathname]);
+    // useEffect(() => {
+    //     setClicked(location.pathname.split("/")[1]);
+    // }, [location.pathname]);
 
     return (
         <div className="headercomponent">
             <Container className="header-wrapper pc-only">
                 <div className="header-logo-col">
-                    <Link to="/">
+                    <span to="/">
                         <img src={mustra_logo_white}></img>
-                    </Link>
+                    </span>
                 </div>
                 <div className="header-menu-col">
                     <div className="menu-wrapper">
                         <div className={"menu-box " + (clicked === "" ? "on" : "off")}>
-                            <Link className="menu-item" to="/">
+                            <span className="menu-item" onClick={() => scrollToTop()}>
                                 Home
-                            </Link>
+                            </span>
                         </div>
                         <div className={"menu-box " + (clicked === "feed" ? "on" : "off")}>
-                            <Link className="menu-item" to="/feed">
+                            <span className="menu-item" onClick={() => scrollToFeed()}>
                                 Feed
-                            </Link>
+                            </span>
                         </div>
                         <div className={"menu-box " + (clicked === "contact" ? "on" : "off")}>
-                            <Link className="menu-item" to="/contact">
-                                Contact
-                            </Link>
+                            <span className="menu-item">Contact</span>
                         </div>
                     </div>
                 </div>
@@ -47,9 +44,9 @@ const HeaderComponent = ({ location }) => {
 
             <Container className="header-wrapper-mobile mobile-only">
                 <div className="header-logo-col">
-                    <Link to="/">
+                    <span to="/">
                         <img src={mustra_logo_white}></img>
-                    </Link>
+                    </span>
                 </div>
                 <div className="header-menu-col" onClick={() => toggle()}>
                     <MenuIcon style={{ fontSize: "35px", cursor: "pointer", color: "white", marginBottom: "2px" }} />
@@ -58,19 +55,19 @@ const HeaderComponent = ({ location }) => {
             <Collapse isOpen={isOpen} className="mobile-only">
                 <div className="collapse-wrapper">
                     <div className="collapse-item-wrapper">
-                        <Link className="collapse-item" to="/" onClick={() => toggle()}>
+                        <span className="collapse-item" to="/" onClick={() => toggle()}>
                             Home
-                        </Link>
+                        </span>
                     </div>
                     <div className="collapse-item-wrapper">
-                        <Link className="collapse-item" to="/feed" onClick={() => toggle()}>
+                        <span className="collapse-item" to="/feed" onClick={() => toggle()}>
                             Feed
-                        </Link>
+                        </span>
                     </div>
                     <div className="collapse-item-wrapper">
-                        <Link className="collapse-item" to="/contact" onClick={() => toggle()}>
+                        <span className="collapse-item" to="/contact" onClick={() => toggle()}>
                             Contact
-                        </Link>
+                        </span>
                     </div>
                 </div>
             </Collapse>

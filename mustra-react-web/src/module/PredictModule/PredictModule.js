@@ -229,7 +229,7 @@ class RenderNowPage extends React.Component {
         }
     }
 }
-const PredictModule = () => {
+const PredictModule = ({}) => {
     const [artist, setArtist] = useState();
     const [song, setSong] = useState();
     const [fan, setFan] = useState();
@@ -258,40 +258,38 @@ const PredictModule = () => {
 
     return (
         <div className="PredictModule">
-            <div className="black-mask">
-                <CommentModule
-                    handleCreateFeed={handleCreateFeed}
-                    modal={modal}
-                    toggle={toggle}
+            <CommentModule
+                handleCreateFeed={handleCreateFeed}
+                modal={modal}
+                toggle={toggle}
+                artist={artist}
+                song={song}
+                rank={rank}
+            />
+            <Container className="content-inner">
+                <div className="header-row">
+                    <img id="logo" src={white_full_logo}></img>
+                    <br />
+                </div>
+
+                <div className="item-row">{page} / 5</div>
+
+                <RenderNowPage
                     artist={artist}
+                    setArtist={setArtist}
                     song={song}
-                    rank={rank}
+                    setSong={setSong}
+                    fan={fan}
+                    setFan={setFan}
+                    movie={movie}
+                    setMovie={setMovie}
+                    page={page}
+                    nextPage={nextPage}
+                    prevPage={prevPage}
+                    goToResult={goToResult}
+                    toggle={toggle}
                 />
-                <Container className="content-inner">
-                    <div className="header-row">
-                        <img id="logo" src={white_full_logo}></img>
-                        <br />
-                    </div>
-
-                    <div className="item-row">{page} / 5</div>
-
-                    <RenderNowPage
-                        artist={artist}
-                        setArtist={setArtist}
-                        song={song}
-                        setSong={setSong}
-                        fan={fan}
-                        setFan={setFan}
-                        movie={movie}
-                        setMovie={setMovie}
-                        page={page}
-                        nextPage={nextPage}
-                        prevPage={prevPage}
-                        goToResult={goToResult}
-                        toggle={toggle}
-                    />
-                </Container>
-            </div>
+            </Container>
         </div>
     );
 };

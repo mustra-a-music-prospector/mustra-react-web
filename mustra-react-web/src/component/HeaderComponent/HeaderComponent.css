@@ -1,4 +1,5 @@
 .headercomponent {
+    position: fixed;
     top: 0px;
     width: 100%;
     height: 50px;
@@ -54,6 +55,7 @@
 }
 
 .pc-only .header-menu-col .menu-item {
+    cursor: pointer;
     color: white;
 }
 .pc-only .header-menu-col .menu-item {
