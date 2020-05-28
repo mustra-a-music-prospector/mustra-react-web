@@ -5,6 +5,7 @@ import white_single_logo from "img/white-single-logo.png";
 import white_full_logo from "img/white-full-logo.png";
 import { POST, FIND_RANK, CREATE_FEED } from "rest";
 import axios from "axios";
+import { getTimeStamp } from "time";
 
 //atoms
 import WhiteInput from "atom/WhiteInput/WhiteInput";
@@ -264,6 +265,7 @@ const PredictModule = ({ scrollToFeed }) => {
             artistName: artist,
             songName: song,
             comment: comment,
+            date: getTimeStamp(),
         });
         if (data) {
             console.log(data);
