@@ -12,6 +12,7 @@ const WhiteInput = ({ hint, value, setValue, onEnter }) => {
             }
         }
     };
+
     return (
         <div className="WhiteInput">
             <Input

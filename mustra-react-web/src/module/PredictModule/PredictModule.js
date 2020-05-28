@@ -24,7 +24,7 @@ const Page1 = ({ artist, setArtist, nextPage }) => {
             <div className="item-row input-row">
                 <WhiteInput hint={"가수이름"} value={artist} setValue={setArtist} onEnter={nextPage} />
                 <div className="item-row">
-                    <div onClick={() => nextPage()} className="right-col">
+                    <div className="right-col">
                         <span id="arrow-label">다음 : 곡이름 입력 </span> <ArrowForwardIosIcon />
                     </div>
                 </div>
@@ -44,11 +44,11 @@ const Page2 = ({ artist, song, setSong, prevPage, goToResult }) => {
             <div className="item-row input-row">
                 <WhiteInput hint={"곡명"} value={song} setValue={setSong} onEnter={goToResult} />
                 <div className="item-row">
-                    <div onClick={() => prevPage()} className="left-col">
+                    <div className="left-col">
                         <ArrowBackIosIcon />
                         <span id="arrow-label"> 이전 : 가수 이름 입력</span>
                     </div>
-                    <div onClick={() => goToResult()} className="right-col">
+                    <div className="right-col">
                         <span id="arrow-label">다음 : 곡이름 입력 </span> <ArrowForwardIosIcon />
                     </div>
                 </div>
@@ -57,12 +57,14 @@ const Page2 = ({ artist, song, setSong, prevPage, goToResult }) => {
     );
 };
 
-const Page3 = () => {
+const Page3 = ({ artist, song }) => {
     return (
         <Container className="content-inner">
             <div className="header-row">
                 <img id="logo" src={white_full_logo}></img>
                 <br />
+                {artist}
+                {song}
             </div>
             <div className="item-row">
                 <Loader />
@@ -85,7 +87,7 @@ class RenderNowPage extends React.Component {
                     <Page2 goToResult={goToResult} prevPage={prevPage} artist={artist} song={song} setSong={setSong} />
                 );
             case 3:
-                return <Page3 />;
+                return <Page3 artist={artist} song={song} />;
             default:
                 return <Page1 artist={artist} setArtist={setArtist} nextPage={nextPage} />;
         }
