@@ -12,16 +12,16 @@ const CommentModule = ({ handleCreateFeed, modal, toggle, artist, song, rank }) 
                 <div className="comment-modal-body">
                     <div className="stats-row">
                         <div className={"stats-col rank "}>
-                            <div className={"rank-value " + rank}>{"B"}</div>
+                            <div className={"rank-value " + rank}>{rank}</div>
                         </div>
                         <div className="stats-col artist">
                             <span className="item-label ">가수</span>
                             <br />
-                            <span className="item-value ">{"아이유"}</span>
+                            <span className="item-value ">{artist}</span>
                         </div>
                         <div className="stats-col song">
                             <span className="item-label ">곡</span> <br />
-                            <span className="item-value ">{"너의의미"}</span>
+                            <span className="item-value ">{song}</span>
                         </div>
                     </div>
                     <div className="input-row">
@@ -40,7 +40,7 @@ const CommentModule = ({ handleCreateFeed, modal, toggle, artist, song, rank }) 
                         <button id="cancle" onClick={() => toggle()}>
                             취소하기
                         </button>
-                        <button id="submit" onClick={() => handleCreateFeed()}>
+                        <button id="submit" onClick={() => handleCreateFeed(comment)}>
                             작성하기
                         </button>
                     </div>
