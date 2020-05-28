@@ -68,6 +68,14 @@
     font-weight: bold;
 }
 
+.pc-only .header-menu-col .on {
+    /* border-bottom: 1px solid white; */
+}
+.pc-only .header-menu-col .on a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none !important;
+}
 /* MOBILE ONLY */
 @media all and (min-width: 800px) {
     .mobile-only {
