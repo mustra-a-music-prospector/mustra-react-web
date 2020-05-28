@@ -6,7 +6,7 @@ import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import ChatIcon from "@material-ui/icons/Chat";
 import { timeForToday, getTimeStamp } from "time";
 const FeedItem = (props) => {
-    const { _id, artistName, songName, rank } = props;
+    const { _id, artistName, songName, rank, comment } = props;
     const getData = () => {};
     getData();
     return (
@@ -31,11 +31,7 @@ const FeedItem = (props) => {
                         &nbsp; &nbsp; &nbsp;
                         <span id="date">{timeForToday(getTimeStamp())}</span>
                     </div>
-                    <div className="content-row">
-                        this is content
-                        <br />
-                        this is contentthis is contentthis is contentthis is content
-                    </div>
+                    <div className="content-row">{comment}</div>
                 </div>
             </div>
         </div>

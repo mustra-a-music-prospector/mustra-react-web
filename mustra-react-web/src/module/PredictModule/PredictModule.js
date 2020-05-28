@@ -159,7 +159,7 @@ const Loading = ({ artist, song }) => {
     );
 };
 
-const ResultPage = ({ artist, song, fan, movie, toggle }) => {
+const ResultPage = ({ artist, song, fan, movie, setRank, toggle }) => {
     const [result, setResult] = useState();
     const getReuslt = async () => {
         const data = await POST(FIND_RANK, {
@@ -170,6 +170,7 @@ const ResultPage = ({ artist, song, fan, movie, toggle }) => {
         });
         if (data) {
             setResult(data);
+            setRank(data.rank);
         }
     };
     useEffect(() => {
@@ -183,12 +184,12 @@ const ResultPage = ({ artist, song, fan, movie, toggle }) => {
             <div className="item-row result">
                 <span id="item-label">가수</span>
                 <br />
-                <span id="item-value">{result.artist}</span>
+                <span id="item-value">{result.artistName}</span>
             </div>
             <div className="item-row result">
                 <span id="item-label">곡</span>
                 <br />
-                <span id="item-value">{result.song}</span>
+                <span id="item-value">{result.songName}</span>
             </div>
             <div className="item-row result">
                 <span id="item-label">랭크</span>
@@ -221,6 +222,7 @@ class RenderNowPage extends React.Component {
             page,
             nextPage,
             prevPage,
+            setRank,
             goToResult,
             toggle,
         } = this.props;
@@ -305,6 +307,7 @@ const PredictModule = ({ scrollToFeed }) => {
                     prevPage={prevPage}
                     goToResult={goToResult}
                     toggle={toggle}
+                    setRank={setRank}
                 />
             </Container>
         </div>
