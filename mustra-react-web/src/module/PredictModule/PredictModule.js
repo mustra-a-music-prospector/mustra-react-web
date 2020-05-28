@@ -237,7 +237,7 @@ const PredictModule = () => {
     const [rank, setRank] = useState("A");
     const [page, setPage] = useState(1);
 
-    const [modal, setModal] = useState(true);
+    const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
 
     const nextPage = () => setPage(page + 1);
