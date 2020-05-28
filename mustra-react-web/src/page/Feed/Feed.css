@@ -1,0 +1,12 @@
+.Feed {
+    background: url("https://images.unsplash.com/photo-1580451890462-7de05cf2e04f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* margin-top: 50px; */
+    height: calc(100vh);
+    background-color: black;
+    color: white;
+    justify-content: center;
+}

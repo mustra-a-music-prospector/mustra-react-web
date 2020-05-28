@@ -58,3 +58,24 @@
     color: gray;
     font-size: 15px;
 }
+
+.PredictModule .item-row #item-label {
+    color: gray;
+    font-size: 15px;
+}
+
+.PredictModule .item-row #item-value {
+    font-size: 20px;
+}
+
+.PredictModule .item-row #rank {
+    font-size: 40px;
+}
+
+.PredictModule .result {
+    padding-bottom: 20px;
+}
+
+.PredictModule .opinion {
+    cursor: pointer;
+}
