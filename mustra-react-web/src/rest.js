@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const DOMAIN = "https://devstu.fdsafdsa.shop/";
+export const DOMAIN = "https://devstu.koreaelection.shop/mustra/";
 export const GOOGLE_DOMAIN = "https://www.google.com/search?q=";
 export const NAVER_DOMAIN = "https://www.google.com/search?q=";
 
