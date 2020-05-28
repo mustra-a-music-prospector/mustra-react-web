@@ -1,0 +1,113 @@
+.comment-modal-wrapper {
+    background-color: black !important;
+    opacity: 0.9;
+}
+
+.comment-modal-header {
+    padding-left: 15px;
+    padding-top: 20px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom: none;
+    text-align: center;
+    color: lightgray;
+}
+
+.comment-modal-body {
+    width: 100%;
+    padding-right: 15px !important;
+    padding-left: 15px;
+}
+
+.comment-modal-body {
+    padding-top: 40px;
+    font-family: "Noto Sans KR", sans-serif;
+    text-align: center;
+    width: 100%;
+}
+
+.rank-result-box {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.rank-result-box .rank-result {
+    font-size: 30px;
+    color: red;
+    font-weight: bolder;
+    margin-left: 10px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.result-row .singer-result-box {
+    width: 50%;
+    text-align: center;
+}
+
+.singer-result-box .singer-result {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 10px;
+    font-family: "Noto Sans KR", sans-serif;
+    color: lightgray;
+}
+
+.comment-modal-body .song-result-box {
+    padding-top: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.song-result-box .song-result {
+    color: lightgray;
+    margin-left: 10px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.comment-modal-wrapper .comment-modal-footer {
+    border-top: none;
+    margin-top: -25px !important;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+    align-items: center;
+}
+
+.rank-result-box .result-name {
+    color: lightgray;
+    font-family: "Noto Sans KR", sans-serif;
+    margin-right: 12px;
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.singer-result-box .result-name {
+    color: lightgray;
+    font-family: "Noto Sans KR", sans-serif;
+    margin-right: 8px;
+    margin-left: 2px;
+}
+
+.song-result-box .result-name {
+    color: lightgray;
+    font-family: "Noto Sans KR", sans-serif;
+    margin-right: 8px;
+    margin-left: 2px;
+}
+
+.comment-modal-body .WhiteInput {
+    margin-top: 15px !important;
+}
+
+.comment-modal-footer button {
+    background-color: rgb(26, 25, 25);
+    opacity: 0.7;
+    color: white;
+    width: 100%;
+    border-radius: 5px;
+    text-decoration: none;
+}
