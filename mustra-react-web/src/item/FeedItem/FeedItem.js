@@ -4,42 +4,37 @@ import axios from "axios";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import ChatIcon from "@material-ui/icons/Chat";
-const FeedItem = () => {
+import { timeForToday, getTimeStamp } from "time";
+const FeedItem = (props) => {
+    const { _id, artistName, songName, rank } = props;
     const getData = () => {};
-
     getData();
     return (
         <div className="FeedItem">
-            <div className="feed-wrapper">
+            <div className="item-wrapper">
                 <div className="stats-col">
-                    <div className="stats-button">
+                    <div id="up">
                         <KeyboardArrowUpIcon />
                     </div>
-                    <div className="stats-count">20</div>
-                    <div className="stats-button">
+                    <div>20</div>
+                    <div id="down">
                         <KeyboardArrowDownIcon />
                     </div>
                 </div>
                 <div className="main-col">
-                    <div className="data-col">
-                        <div className="rank-row">
-                            <div id="item-name">랭크</div>
-                            <div id="item-value">A</div>
-                        </div>
-                        <div className="singer-row">
-                            <span id="item-name">가수</span>
-                            <div id="item-value">아이유</div>
-                        </div>
-                        <div className="song-row">
-                            <span id="item-name">곡</span>
-                            <div id="item-value">너의 의미</div>
-                        </div>
-                    </div>
-                    <div className="comment-col">
-                        <span id="item-name">
-                            <ChatIcon />
+                    <div className="info-row">
+                        <span id="rank">{rank}</span>
+                        &nbsp; &nbsp;
+                        <span id="artist">
+                            {artistName} - {songName}
                         </span>
-                        <span id="item-value">"A 받을만한 노래 같아요."</span>
+                        &nbsp; &nbsp; &nbsp;
+                        <span id="date">{timeForToday(getTimeStamp())}</span>
+                    </div>
+                    <div className="content-row">
+                        this is content
+                        <br />
+                        this is contentthis is contentthis is contentthis is content
                     </div>
                 </div>
             </div>
