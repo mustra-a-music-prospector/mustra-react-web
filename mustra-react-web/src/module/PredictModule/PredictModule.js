@@ -229,7 +229,7 @@ class RenderNowPage extends React.Component {
         }
     }
 }
-const PredictModule = ({}) => {
+const PredictModule = ({ scrollToFeed }) => {
     const [artist, setArtist] = useState();
     const [song, setSong] = useState();
     const [fan, setFan] = useState();
@@ -253,6 +253,7 @@ const PredictModule = ({}) => {
         });
         if (data) {
             console.log(data);
+            scrollToFeed();
         }
     };
 
