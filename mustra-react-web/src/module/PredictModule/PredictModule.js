@@ -3,6 +3,7 @@ import { Container, Button } from "reactstrap";
 import "./PredictModule.css";
 import white_single_logo from "img/white-single-logo.png";
 import white_full_logo from "img/white-full-logo.png";
+import CommentModule from "module/CommentModule/CommentModule";
 
 //atoms
 import WhiteInput from "atom/WhiteInput/WhiteInput";
@@ -16,7 +17,7 @@ const Page1 = ({ artist, setArtist, nextPage }) => {
     return (
         <div className="fade-div">
             <div className="item-row">당신이 궁금한 가수는?</div>
-
+            <CommentModule></CommentModule>
             <div className="item-row input-row">
                 <WhiteInput hint={"가수이름"} value={artist} setValue={setArtist} onEnter={nextPage} />
                 <div className="item-row">
