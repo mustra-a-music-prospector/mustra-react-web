@@ -3,10 +3,9 @@ import { Button, Modal, Form, ModalHeader } from "reactstrap";
 import "./CommentModule.css";
 import WhiteInput from "atom/WhiteInput/WhiteInput";
 
-const CommentModule = ({ handleCreateFeed, modal, toggle, artist, song }) => {
+const CommentModule = ({ handleCreateFeed, modal, toggle, artist, song, rank }) => {
     const backdrop = "static";
     const [comment, setComment] = useState();
-    const rank = "B";
     return (
         <Modal className="CommentModule" isOpen={modal} toggle={toggle} backdrop={backdrop} size="lg">
             <div className="comment-modal-wrapper">

@@ -32,7 +32,7 @@ const PageRouter = () => {
                 <HeaderComponent scrollToTop={scrollToTop} scrollToFeed={scrollToFeed} />
                 <div className="Article">
                     <div id="home">
-                        <Home feed={true} />
+                        <Home feed={true} scrollToFeed={scrollToFeed} />
                     </div>
                     <div id="feed">
                         <FeedList feed={true} />

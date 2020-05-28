@@ -5,8 +5,7 @@ import "./Home.css";
 // moudules
 import PredictModule from "module/PredictModule/PredictModule";
 import FeedList from "module/FeedList/FeedList";
-
-const Home = ({ feed }) => {
+const Home = ({ scrollToFeed, feed }) => {
     const [isLoading, setIsLoading] = useState(false);
     const handleScroll = () => {
         const { innerHeight } = window;
@@ -29,7 +28,7 @@ const Home = ({ feed }) => {
     return (
         <div className="Home">
             <div className="black-mask">
-                <PredictModule />
+                <PredictModule scrollToFeed={scrollToFeed} />
             </div>
         </div>
     );
