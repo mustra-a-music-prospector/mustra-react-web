@@ -4,9 +4,7 @@ import "./PredictModule.css";
 import white_single_logo from "img/white-single-logo.png";
 import white_full_logo from "img/white-full-logo.png";
 import { GOOGLE_GET, NAVER_GET } from "rest";
-
 import axios from "axios";
-
 //atoms
 import WhiteInput from "atom/WhiteInput/WhiteInput";
 import Loader from "atom/Loader/Loader";
@@ -20,7 +18,6 @@ const Page1 = ({ artist, setArtist, nextPage }) => {
     return (
         <div className="fade-div">
             <div className="item-row">당신이 궁금한 가수는?</div>
-
             <div className="item-row input-row">
                 <WhiteInput
                     hint={"가수이름"}
