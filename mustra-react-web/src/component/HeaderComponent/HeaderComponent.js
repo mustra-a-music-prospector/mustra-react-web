@@ -7,7 +7,7 @@ import "./HeaderComponent.css";
 // icon
 import MenuIcon from "@material-ui/icons/Menu";
 
-const HeaderComponent = ({ location }) => {
+const HeaderComponent = ({ location, scrollToFeed }) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
     const [clicked, setClicked] = useState("");
@@ -32,7 +32,7 @@ const HeaderComponent = ({ location }) => {
                             </Link>
                         </div>
                         <div className={"menu-box " + (clicked === "feed" ? "on" : "off")}>
-                            <Link className="menu-item" to="/feed">
+                            <Link className="menu-item" to="/#feed" onClick={() => scrollToFeed()}>
                                 Feed
                             </Link>
                         </div>

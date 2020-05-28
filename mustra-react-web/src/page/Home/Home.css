@@ -1,0 +1,32 @@
+.Home {
+    background: url("https://images.unsplash.com/photo-1580451890462-7de05cf2e04f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* margin-top: 50px; */
+    height: calc(100vh);
+    background-color: black;
+    color: white;
+    justify-content: center;
+}
+.Home .half-home {
+    float: left;
+    width: calc(100% - 30%);
+}
+
+.feed-col {
+    float: left;
+    width: 30%;
+    height: 100vh;
+    border-left: 1px solid white;
+    background-color: black;
+}
+
+.Home .my-container-true {
+    /* padding-left: 5%;
+    padding-right: 5%; */
+}
+.none {
+    display: none;
+}

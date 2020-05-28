@@ -1,3 +1,6 @@
+.headercomponent-true {
+    width: calc(100% - 30%);
+}
 .headercomponent {
     top: 0px;
     width: 100%;
