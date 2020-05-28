@@ -79,3 +79,18 @@
 .PredictModule .opinion {
     cursor: pointer;
 }
+
+.PredictModule .item-col {
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 20px;
+    float: left;
+    width: 50%;
+}
+
+.PredictModule .item-col:hover {
+    /* border-radius: 5px; */
+    font-size: 30px;
+    border-bottom: 1px solid yellow;
+    color: yellow;
+}

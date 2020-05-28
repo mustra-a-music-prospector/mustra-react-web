@@ -1,34 +1,12 @@
 import axios from "axios";
 
 export const DOMAIN = "https://devstu.koreaelection.shop/mustra/";
-export const GOOGLE_DOMAIN = "https://www.google.com/search?q=";
-export const NAVER_DOMAIN = "https://www.google.com/search?q=";
 
-export const NAVER_GET = (data) => {
-    console.log(NAVER_DOMAIN + data);
-    return axios({
-        method: "get",
-        url: NAVER_DOMAIN + data,
-    })
-        .then((result) => result.data)
-        .catch((result) => {
-            console.log(result);
-            return null;
-        });
-};
+export const CREATE_FEED = "feed/create";
 
-export const GOOGLE_GET = (data) => {
-    console.log(GOOGLE_DOMAIN + data);
-    return axios({
-        method: "get",
-        url: GOOGLE_DOMAIN + data,
-    })
-        .then((result) => result.data)
-        .catch((result) => {
-            console.log(result);
-            return null;
-        });
-};
+export const FIND_ALL_FEED = "feed/findAll";
+
+export const FIND_RANK = "find/rank";
 
 export const GET = (url, data) => {
     console.log(DOMAIN + url);
