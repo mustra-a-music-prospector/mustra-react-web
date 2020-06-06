@@ -5,6 +5,9 @@ import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import ChatIcon from "@material-ui/icons/Chat";
 import { timeForToday, getTimeStamp } from "time";
+//icons
+import SmsIcon from "@material-ui/icons/Sms";
+
 const FeedItem = (props) => {
     const { _id, artistName, songName, rank, comment, likeCount, date } = props;
     const getData = () => {};
@@ -17,6 +20,7 @@ const FeedItem = (props) => {
                         <KeyboardArrowUpIcon />
                     </div>
                     <div>{likeCount}</div>
+
                     <div id="down">
                         <KeyboardArrowDownIcon />
                     </div>
@@ -32,8 +36,12 @@ const FeedItem = (props) => {
                         </span>
                         &nbsp; &nbsp; &nbsp;
                         <span id="date">{timeForToday(date)}</span>
+                    </div>{" "}
+                    <div className="content-row">
+                        {" "}
+                        <SmsIcon style={{ color: "gray", marginRight: "5px" }} />
+                        {comment}
                     </div>
-                    <div className="content-row">{comment}</div>
                 </div>
             </div>
         </div>

@@ -44,30 +44,50 @@
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 5px;
+    text-align: center;
+}
+
+.FeedItem #artist {
+    font-size: 18px;
+    font-family: "Noto Sans KR", sans-serif;
 }
 
 .FeedItem .A {
-    background-color: yellow;
+    color: red;
+    font-weight: bold;
+    border: 2px solid red;
+    border-radius: 20px;
 }
 
 .FeedItem .B {
-    background-color: rgb(151, 151, 0);
+    color: rgb(43, 43, 195);
+    font-weight: bold;
+    border: 2px solid rgb(43, 43, 195);
+    border-radius: 20px;
 }
 
 .FeedItem .C {
-    background-color: yellow;
+    color: rgb(14, 136, 14);
+    font-weight: bold;
+    border: 2px solid rgb(14, 136, 14);
+    border-radius: 20px;
 }
 
 .FeedItem .D {
-    background-color: rgb(131, 131, 131);
-    color: rgb(0, 0, 0);
+    color: rgb(131, 131, 131);
+    font-weight: bold;
+    border: 2px solid rgb(131, 131, 131);
+    border-radius: 20px;
 }
 
 .FeedItem .E {
-    background-color: rgb(131, 131, 131);
-    color: rgb(0, 0, 0);
+    color: rgb(131, 131, 131);
+    font-weight: bold;
+    border: 2px solid rgb(131, 131, 131);
+    border-radius: 20px;
 }
 
 .FeedItem .content-row {
-    padding-top: 10px;
+    padding-top: 13px;
+    font-family: "Noto Sans KR", sans-serif;
 }

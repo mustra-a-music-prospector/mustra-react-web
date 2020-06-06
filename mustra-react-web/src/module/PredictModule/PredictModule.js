@@ -272,6 +272,7 @@ const PredictModule = ({ scrollToFeed }) => {
         if (data) {
             console.log(data);
             scrollToFeed();
+            toggle();
         }
     };
 
