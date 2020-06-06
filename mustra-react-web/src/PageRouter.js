@@ -4,11 +4,11 @@ import Home from "page/Home/Home";
 import Feed from "page/Feed/Feed";
 import ScrollToTop from "util/ScrollToTop";
 import HeaderComponent from "component/HeaderComponent/HeaderComponent";
+import FooterComponent from "component/FooterComponent/FooterComponent";
 import FeedList from "module/FeedList/FeedList";
 const PageRouter = () => {
     const [feed, setFeed] = useState(false);
     const toggleFeed = () => setFeed(!feed);
-
     const scrollToTop = () => {
         var body = document.getElementsByTagName("body")[0];
         window.scroll({
@@ -18,7 +18,6 @@ const PageRouter = () => {
         });
     };
     const scrollToFeed = () => {
-        // var feed = document.getElementById("feed");
         var feed = document.querySelector("#feed").offsetTop;
         window.scroll({
             behavior: "smooth",
@@ -38,7 +37,7 @@ const PageRouter = () => {
                         <FeedList feed={true} />
                     </div>
                 </div>
-                {/* <FooterModule /> */}
+                <FooterComponent />
             </div>
         </div>
     );

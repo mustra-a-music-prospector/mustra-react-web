@@ -1,0 +1,15 @@
+.FooterComponent {
+    background-color: rgb(248, 248, 248);
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.FooterComponent img {
+    width: 100px;
+}
+
+.FooterComponent a {
+    color: black;
+    text-decoration: none;
+}

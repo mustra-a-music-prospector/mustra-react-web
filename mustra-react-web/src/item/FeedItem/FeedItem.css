@@ -43,8 +43,29 @@
     padding: 2px;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: yellow;
     border-radius: 5px;
+}
+
+.FeedItem .A {
+    background-color: yellow;
+}
+
+.FeedItem .B {
+    background-color: rgb(151, 151, 0);
+}
+
+.FeedItem .C {
+    background-color: yellow;
+}
+
+.FeedItem .D {
+    background-color: rgb(131, 131, 131);
+    color: rgb(0, 0, 0);
+}
+
+.FeedItem .E {
+    background-color: rgb(131, 131, 131);
+    color: rgb(0, 0, 0);
 }
 
 .FeedItem .content-row {
