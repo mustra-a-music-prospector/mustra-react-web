@@ -27,24 +27,18 @@
     width: 30px;
 }
 
-/* PC ONLY */
-@media all and (max-width: 800px) {
-    .pc-only {
-        display: none;
-    }
-}
-.pc-only .header-menu-col {
+.header-menu-col {
     text-align: center;
     width: calc(100% - 60px);
     float: right;
 }
 
-.pc-only .header-menu-col .menu-wrapper {
+.header-menu-col .menu-wrapper {
     text-align: right;
     height: 50px;
 }
 
-.pc-only .header-menu-col .menu-box {
+.header-menu-col .menu-box {
     display: inline-block;
     padding-left: 20px;
     padding-right: 20px;
@@ -54,67 +48,29 @@
     font-size: 15px;
 }
 
-.pc-only .header-menu-col .menu-item {
+.header-menu-col .menu-item {
     cursor: pointer;
     color: white;
 }
-.pc-only .header-menu-col .menu-item {
+.header-menu-col .menu-item {
     text-decoration: none !important;
     text-align: center;
 }
 
-.pc-only .header-menu-col .menu-box:hover {
+.header-menu-col .menu-box:hover {
     font-weight: bold;
 }
-.pc-only .header-menu-col .menu-box:hover .menu-item {
+.header-menu-col .menu-box:hover .menu-item {
     font-weight: bold;
 }
 
-.pc-only .header-menu-col .on {
+.header-menu-col .on {
     /* border-bottom: 1px solid white; */
 }
-.pc-only .header-menu-col .on a {
+.header-menu-col .on a {
     color: white;
     font-weight: bold;
     text-decoration: none !important;
-}
-/* MOBILE ONLY */
-@media all and (min-width: 800px) {
-    .mobile-only {
-        display: none;
-    }
-}
-.mobile-only .header-menu-col {
-    text-align: right;
-    height: 50px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
-.collapse-wrapper {
-    height: auto;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    background-color: black;
-}
-
-.collapse-wrapper .collapse-item-wrapper {
-    text-align: center;
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-.collapse-wrapper .collapse-item {
-    width: 100%;
-}
-.collapse-wrapper .collapse-item-wrapper a {
-    width: 100%;
-    color: white;
-    text-decoration: none !important;
-}
-
-.collapse-wrapper .collapse-item-wrapper a:hover {
-    font-weight: bolder;
 }
 
 #exampleEmail.form-control {
