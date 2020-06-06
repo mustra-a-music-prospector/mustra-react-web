@@ -9,8 +9,9 @@ const FeedList = () => {
     const getData = async () => {
         const data = await GET(FIND_ALL_FEED);
         if (data) {
-            console.log(data);
-            setItem(data.map((it) => <FeedItem key={it._id} {...it} />));
+            const sortData = data.reverse();
+            console.log(sortData);
+            setItem(sortData.map((it) => <FeedItem key={it._id} {...it} />));
         }
     };
     useEffect(() => {
@@ -22,14 +23,6 @@ const FeedList = () => {
                 <Container>
                     <div className="feed-header">Feed</div>
                     {item}
-                    {/* <FeedItem />
-                    <FeedItem />
-                    <FeedItem />
-                    <FeedItem />
-                    <FeedItem />
-                    <FeedItem />
-                    <FeedItem />
-                    <FeedItem /> */}
                 </Container>
             </div>
         );
