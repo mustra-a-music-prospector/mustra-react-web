@@ -44,6 +44,7 @@ const WhiteInput = ({ hint, value, setValue, onEnter, setNextAble, type }) => {
     return (
         <div className="WhiteInput">
             <Input
+                autoFocus
                 onKeyPress={EnterKey}
                 value={value}
                 onChange={({ target: { value } }) => handleChange(value)}
